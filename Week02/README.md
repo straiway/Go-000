@@ -71,3 +71,17 @@ func GetUserProfile(userID uint64) {
 
 }
 ```
+
+## 参考答案
+```go
+// dao层
+ return errors.Wrapf(code.NotFound, fmt.Sprintf("sql: %s error: %v", sql, err))
+
+```
+
+```go
+// biz层
+if errors.Is(err, code.NotFound} {
+
+}
+```
