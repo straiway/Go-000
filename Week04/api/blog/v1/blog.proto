@@ -1,0 +1,17 @@
+// protoc --go_out . api/blog.proto
+syntax = "proto3";
+
+option go_package = "Go-000/Week04/api/blog";
+
+service Blog {
+  rpc Publish(PublishReply) returns (PublishReply) {}
+}
+
+message PublishRequest {
+  string title = 1;
+  string content = 2;
+}
+
+message PublishReply {
+  int64 articleID = 1;
+}
